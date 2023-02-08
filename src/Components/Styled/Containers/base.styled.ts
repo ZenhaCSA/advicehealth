@@ -22,6 +22,12 @@ import {
   AlignSelfProps,
   JustifySelfProps,
   AlignItemsProps,
+  textAlign,
+  TextAlignProps,
+  fontSize,
+  FontSizeProps,
+  justifyContent,
+  JustifyContentProps
 } from 'styled-system';
 
 interface Props {
@@ -32,6 +38,7 @@ interface Props {
 
 const BaseContainer = styled.div<
   ColorProps &
+    TextAlignProps &
     LayoutProps &
     SpaceProps &
     BorderProps &
@@ -42,6 +49,8 @@ const BaseContainer = styled.div<
     AlignSelfProps &
     JustifySelfProps &
     AlignItemsProps &
+    FontSizeProps &
+    JustifyContentProps &
     Props
 >`
 ${space}
@@ -55,6 +64,9 @@ ${justifySelf}
 ${border}
 ${position}
 ${background}
+${textAlign}
+${fontSize}
+${justifyContent}
 cursor: ${({ cursor }: Props) => cursor ?? 'default'};
 float: ${({ float }: Props) => float ?? 'none'};
 `;
