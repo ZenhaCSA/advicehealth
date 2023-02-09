@@ -3,7 +3,13 @@ import Flex from "../Styled/Containers/Flex";
 import Button from "../Styled/Buttons/Button";
 import fotoMedico from "../../Images/user_icon.svg";
 
-const CardMedicos = () => {
+const CardMedicos = (props: any) => {
+  const nomeMedico = props.medico.nome;
+  const id = props.medico.id;
+  const area = props.medico.area;
+
+  localStorage.setItem("idmedico", id);
+
   return (
     <>
       <Button>
@@ -21,98 +27,28 @@ const CardMedicos = () => {
             />
           </Div>
           <Div>
-            <input
-              style={{
-                border: "none",
-                color: "#0b4ca2",
-                backgroundColor: "transparent",
-                fontSize: "22px",
-              }}
-              type="text"
-              value="Jose Geraldo"
-            />
-            <input
-              style={{
-                border: "none",
-                color: "#0b4ca2",
-                backgroundColor: "transparent",
-                fontSize: "15px",
-              }}
-              type="text"
-              value="Dentista"
-            />
-          </Div>
-        </Flex>
-      </Button>
-      <Button>
-        <Flex>
-          <img
-            decoding="async"
-            style={{
-              height: "40px",
-              marginLeft: "10px",
-              marginRight: "10px",
-            }}
-            alt="fotoMedico"
-            src={fotoMedico}
-          />
-          <Div>
-            <input
-              style={{
-                border: "none",
-                color: "#0b4ca2",
-                backgroundColor: "transparent",
-                fontSize: "22px",
-              }}
-              type="text"
-              value="Jose Geraldo"
-            />
-            <input
+            <Div>
+              <label
+                style={{
+                  border: "none",
+                  color: "#0b4ca2",
+                  backgroundColor: "transparent",
+                  fontSize: "22px",
+                }}
+              >
+                {nomeMedico}
+              </label>
+            </Div>
+            <label
               style={{
                 border: "none",
                 color: "#0b4ca2",
                 backgroundColor: "transparent",
                 fontSize: "15px",
               }}
-              type="text"
-              value="Dentista"
-            />
-          </Div>
-        </Flex>
-      </Button>
-      <Button>
-        <Flex>
-          <img
-            decoding="async"
-            style={{
-              height: "40px",
-              marginLeft: "10px",
-              marginRight: "10px",
-            }}
-            alt="fotoMedico"
-            src={fotoMedico}
-          />
-          <Div>
-            <input
-              style={{
-                border: "none",
-                color: "#0b4ca2",
-                backgroundColor: "transparent",
-                fontSize: "22px",
-              }}
-              type="text"
-              value="Jose Geraldo"
-            />
-            <input
-              style={{
-                border: "none",
-                color: "#0b4ca2",
-                backgroundColor: "transparent",
-                fontSize: "15px",
-              }}
-              type="text"
-              value="Dentista"
-            />
+            >
+              {area}
+            </label>
           </Div>
         </Flex>
       </Button>

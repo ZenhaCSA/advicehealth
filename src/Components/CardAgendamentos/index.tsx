@@ -1,31 +1,24 @@
 import Div from "../Styled/Containers/Div";
 import Flex from "../Styled/Containers/Flex";
-import fotoMedico from "../../Images/user_icon.svg";
 
-const CardAgendamentos = () => {
+const CardAgendamentos = (props: any) => {
+  const time = props.horario.hora;
+
   return (
     <>
       <Flex
-        padding="10px"
-        width="93%"
+        padding="8px"
+        width="99%"
         backgroundColor="rgb(236, 208, 177)"
         borderRadius="20px"
+        color="rgb(121, 107, 107)"
+        mb={{ lg: "1.5%" }}
       >
-        <Div>
-          <img
-            decoding="async"
-            style={{
-              height: "40px",
-              marginLeft: "10px",
-              marginRight: "10px",
-            }}
-            alt="fotoMedico"
-            src={fotoMedico}
-          />
-          <i className="bi bi-circle-fill"></i>
+        <Div textAlign="center" width="10%" color="green">
+          <i style={{ fontSize: "2.5rem" }} className="bi bi-circle-fill"></i>
         </Div>
         <Div>
-          <input
+          <label
             style={{
               border: "none",
               color: "rgb(121, 107, 107)",
@@ -33,19 +26,27 @@ const CardAgendamentos = () => {
               fontSize: "22px",
               width: "100%",
             }}
-            type="text"
-            value="08:00"
-          />
-          <input
+          >
+            {time}
+          </label>
+          <label
             style={{
               border: "none",
               color: "rgb(121, 107, 107)",
               backgroundColor: "transparent",
               fontSize: "15px",
             }}
-            type="text"
-            value="Livre"
-          />
+          >
+            Livre
+          </label>
+        </Div>
+        <Div alignSelf="end" ml={{lg: "60%"}}>
+          {/* delete */}
+          <i className="bi bi-trash"></i>
+          {/* edit */}
+          <i className="bi bi-pen-fill"></i>
+          {/* visualizar */}
+          <i className="bi bi-eye-fill"></i>
         </Div>
       </Flex>
     </>
