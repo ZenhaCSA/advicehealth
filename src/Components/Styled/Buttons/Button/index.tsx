@@ -4,7 +4,7 @@ import BaseButton from '../base.styled';
 const Button = styled(BaseButton)`
 border-radius: 20px;
 height: 70px;
-width:26rem;
+width:95%;
 margin:4px;
 border: none;
 text-align: start;

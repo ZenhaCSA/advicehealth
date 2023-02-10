@@ -3,16 +3,20 @@ import Flex from "../Styled/Containers/Flex";
 import Button from "../Styled/Buttons/Button";
 import fotoMedico from "../../Images/user_icon.svg";
 
-const CardMedicos = (props: any) => {
+const CardMedicos = (props : any) => {
   const nomeMedico = props.medico.nome;
   const id = props.medico.id;
   const area = props.medico.area;
 
-  localStorage.setItem("idmedico", id);
+  const selectMedico = () => {
+    localStorage.setItem("selectNomeMedico", nomeMedico);
+    localStorage.setItem("areaMedicoSelected", area);
+    localStorage.setItem("idmedico", id);
+  };
 
   return (
     <>
-      <Button>
+      <Button onClick={() => selectMedico()}>
         <Flex>
           <Div>
             <img
