@@ -34,7 +34,6 @@ const Navbar = () => {
             >
               <p>Consultas</p>
             </Link>
-            {/* <i class="icon-search"></i> */}
           </div>
         </Grid>
         <body></body>

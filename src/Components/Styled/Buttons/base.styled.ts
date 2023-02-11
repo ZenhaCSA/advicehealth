@@ -14,6 +14,7 @@ import {
 
 interface Props {
   cursor?: string;
+  onCLick?: string;
 }
 
 const BaseButton = styled.button<
@@ -25,6 +26,8 @@ ${space}
 ${color}
 ${fontSize}
 cursor: ${(props: Props) => props.cursor ?? 'default'}
+onCLick: ${(props: Props) => props.cursor ?? 'default'}
+
 `;
 
 export default BaseButton;
