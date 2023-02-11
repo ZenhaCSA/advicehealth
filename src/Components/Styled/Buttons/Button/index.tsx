@@ -8,6 +8,7 @@ width:95%;
 margin:4px;
 border: none;
 text-align: start;
+cursor:"pointer";
 `;
 
 export default Button;

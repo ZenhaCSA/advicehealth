@@ -17,7 +17,7 @@ const CardMedicos = (props : any) => {
   return (
     <>
       <Button onClick={() => selectMedico()}>
-        <Flex>
+        <Flex cursor="pointer">
           <Div>
             <img
               decoding="async"
@@ -25,6 +25,7 @@ const CardMedicos = (props : any) => {
                 height: "40px",
                 marginLeft: "10px",
                 marginRight: "10px",
+                cursor:"pointer"
               }}
               alt="fotoMedico"
               src={fotoMedico}
@@ -38,6 +39,7 @@ const CardMedicos = (props : any) => {
                   color: "#0b4ca2",
                   backgroundColor: "transparent",
                   fontSize: "22px",
+                  cursor:"pointer"
                 }}
               >
                 {nomeMedico}
@@ -49,6 +51,7 @@ const CardMedicos = (props : any) => {
                 color: "#0b4ca2",
                 backgroundColor: "transparent",
                 fontSize: "15px",
+                cursor:"pointer"
               }}
             >
               {area}

@@ -2,8 +2,8 @@ import Div from "../Styled/Containers/Div";
 import Flex from "../Styled/Containers/Flex";
 
 const CardConsultaDeAgendamentos = (props: any) => {
-  const medico = props.consulta.medico;
-  const area = props.consulta.area;
+  const medico = localStorage.getItem("selectNomeMedico");
+  const area = localStorage.getItem("areaMedicoSelected");
   const paciente = props.consulta.paciente;
   const cpf = props.consulta.cpf;
   const dtnascimento = props.consulta.dtnascimento;
@@ -33,7 +33,7 @@ const CardConsultaDeAgendamentos = (props: any) => {
               width: "100%",
             }}
           >
-            Medico: {medico}
+            {medico}
           </label>
           <label
             style={{

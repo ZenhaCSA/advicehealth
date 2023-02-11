@@ -1,15 +1,19 @@
 import Div from "../Styled/Containers/Div";
 import Flex from "../Styled/Containers/Flex";
+import Button from "../Styled/Buttons/ButtonSelect";
 
 const CardAgendamentos = (props: any) => {
   const time = props.horario.hora;
 
   const cadastrar = () => {
-    const a = null ? 'vazio' : localStorage.getItem("selectNomeMedico");
-    const b = null ? 'vazio' : localStorage.getItem("areaMedicoSelected");
-    const c = null ? 'vazio' : localStorage.getItem("idmedico");
+    const a = null ? "vazio" : localStorage.getItem("selectNomeMedico");
+    const b = null ? "vazio" : localStorage.getItem("areaMedicoSelected");
+    const c = null ? "vazio" : localStorage.getItem("idmedico");
 
-    console.log(a)
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    
   };
 
   return (
@@ -49,14 +53,30 @@ const CardAgendamentos = (props: any) => {
           </label>
         </Div>
         <Div alignSelf="end" ml={{ lg: "60%" }}>
-          {/* delete */}
-          <i className="bi bi-trash"></i>
-          {/* edit */}
-          <button onClick={() => cadastrar()}>
+          <Button
+            onClick={() => cadastrar()}
+            backgroundColor="transparent"
+            color="currentColor"
+          >
+            {/* delete */}
+            <i className="bi bi-trash"></i>
+          </Button>
+          <Button
+            onClick={() => cadastrar()}
+            backgroundColor="transparent"
+            color="currentColor"
+          >
+            {/* edit */}
             <i className="bi bi-pen-fill"></i>
-          </button>
-          {/* visualizar */}
-          <i className="bi bi-eye-fill"></i>
+          </Button>
+          <Button
+            onClick={() => cadastrar()}
+            backgroundColor="transparent"
+            color="currentColor"
+          >
+            {/* visualizar */}
+            <i className="bi bi-eye-fill"></i>
+          </Button>
         </Div>
       </Flex>
     </>
