@@ -4,7 +4,7 @@ import CardMedicos from "../../Components/CardMedicos";
 import CardAgendamentos from "../../Components/CardAgendamentos";
 import horarios from "../../Components/Objects/horarios.json";
 import medicos from "../../Components/Objects/medicos.json";
-import CardConsultaDeAgendamentos from "../../Components/CardConsulta";
+import CardVisualizarDados from "../../Components/CardConsulta";
 import agendamentos from "../../Components/Objects/agendamentoFeitos.json";
 
 const Agendamentos = () => {
@@ -79,7 +79,7 @@ const Agendamentos = () => {
                 </Div>
                 <Div>
                   {agendamentos.map((i) => (
-                    <CardConsultaDeAgendamentos consulta={i} />
+                    <CardVisualizarDados consulta={i} />
                   ))}
                 </Div>
               </Div>

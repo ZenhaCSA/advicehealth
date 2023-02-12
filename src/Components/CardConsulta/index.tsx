@@ -1,7 +1,7 @@
 import Div from "../Styled/Containers/Div";
 import Flex from "../Styled/Containers/Flex";
 
-const CardConsultaDeAgendamentos = (props: any) => {
+const CardVisualizarDados = (props: any) => {
   const medico = localStorage.getItem("selectNomeMedico");
   const area = localStorage.getItem("areaMedicoSelected");
   const paciente = props.consulta.paciente;
@@ -33,7 +33,7 @@ const CardConsultaDeAgendamentos = (props: any) => {
               width: "100%",
             }}
           >
-            {medico}
+            Medico : {medico}
           </label>
           <label
             style={{
@@ -45,67 +45,10 @@ const CardConsultaDeAgendamentos = (props: any) => {
           >
             Area: {area}
           </label>
-          <Div>
-            <label
-              style={{
-                border: "none",
-                color: "rgb(121, 107, 107)",
-                backgroundColor: "transparent",
-                fontSize: "15px",
-              }}
-            >
-              Paciente: {paciente}
-            </label>
-          </Div>
-          <label
-            style={{
-              border: "none",
-              color: "rgb(121, 107, 107)",
-              backgroundColor: "transparent",
-              fontSize: "15px",
-            }}
-          >
-            CPF: {cpf}
-          </label>
-          <Div>
-            <label
-              style={{
-                border: "none",
-                color: "rgb(121, 107, 107)",
-                backgroundColor: "transparent",
-                fontSize: "15px",
-              }}
-            >
-              Data de nascimento: {dtnascimento}
-            </label>
-          </Div>
-
-          <label
-            style={{
-              border: "none",
-              color: "rgb(121, 107, 107)",
-              backgroundColor: "transparent",
-              fontSize: "15px",
-            }}
-          >
-            Endereco: {endereco}
-          </label>
-          <Div>
-            <label
-              style={{
-                border: "none",
-                color: "rgb(121, 107, 107)",
-                backgroundColor: "transparent",
-                fontSize: "15px",
-              }}
-            >
-              Estatus de pagamento : {estadoPagamento}
-            </label>
-          </Div>
         </Div>
       </Flex>
     </>
   );
 };
 
-export default CardConsultaDeAgendamentos;
+export default CardVisualizarDados;
