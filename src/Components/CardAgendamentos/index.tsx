@@ -1,23 +1,44 @@
 import Div from "../Styled/Containers/Div";
 import Flex from "../Styled/Containers/Flex";
 import Button from "../Styled/Buttons/ButtonSelect";
+import { useEffect, useState } from "react";
+import CardModal from "../ModaTeste";
 
 const CardAgendamentos = (props: any) => {
   const time = props.horario.hora;
 
   const cadastrar = () => {
-    const a = null ? "vazio" : localStorage.getItem("selectNomeMedico");
-    const b = null ? "vazio" : localStorage.getItem("areaMedicoSelected");
-    const c = null ? "vazio" : localStorage.getItem("idmedico");
-
-    console.log(a);
-    console.log(b);
-    console.log(c);
-    
+    // const a = null ? "vazio" : localStorage.getItem("selectNomeMedico");
+    // const b = null ? "vazio" : localStorage.getItem("areaMedicoSelected");
+    // const c = null ? "vazio" : localStorage.getItem("idmedico");
   };
 
+  const [medicoNome, setMedicoNome] = useState("");
+  const [editActivated, SeteditActivated] = useState(false);
+  const medicoArea = localStorage.getItem("areaMedicoSelected");
+  const medicoId = localStorage.getItem("idmedico");
+  const medicoHorario = localStorage.getItem("selectHorario");
+
+  const visualizar = () => {
+    localStorage.setItem("selectHorario", time);
+    const insert = localStorage.getItem("selectNomeMedico");
+    const selectNomeMedico = insert == null ? "oi" : insert;
+    setMedicoNome(selectNomeMedico);
+    SeteditActivated(true);
+  };
+
+  useEffect(() => {
+    console.log("oi");
+  }, [editActivated]);
+
   return (
-    <>
+    <Flex>
+      <CardModal
+        medicoNome={medicoNome}
+        medicoArea={medicoArea}
+        medicoId={medicoId}
+        medicoHorario={medicoHorario}
+      />
       <Flex
         padding="8px"
         width="99%"
@@ -70,7 +91,9 @@ const CardAgendamentos = (props: any) => {
             <i className="bi bi-pen-fill"></i>
           </Button>
           <Button
-            onClick={() => cadastrar()}
+            onClick={() => visualizar()}
+            data-bs-toggle="modal"
+            data-bs-target="#janelaModal"
             backgroundColor="transparent"
             color="currentColor"
           >
@@ -79,7 +102,7 @@ const CardAgendamentos = (props: any) => {
           </Button>
         </Div>
       </Flex>
-    </>
+    </Flex>
   );
 };
 
