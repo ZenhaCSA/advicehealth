@@ -4,11 +4,6 @@ import Flex from "../Styled/Containers/Flex";
 const CardVisualizarDados = (props: any) => {
   const medico = localStorage.getItem("selectNomeMedico");
   const area = localStorage.getItem("areaMedicoSelected");
-  const paciente = props.consulta.paciente;
-  const cpf = props.consulta.cpf;
-  const dtnascimento = props.consulta.dtnascimento;
-  const endereco = props.consulta.endereco;
-  const estadoPagamento = props.consulta.estadoPagamento;
 
   return (
     <>
