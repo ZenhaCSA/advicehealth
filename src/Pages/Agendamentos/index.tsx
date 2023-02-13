@@ -2,10 +2,9 @@ import Div from "../../Components/Styled/Containers/Div";
 import Grid from "../../Components/Styled/Containers/Grid";
 import CardMedicos from "../../Components/CardMedicos";
 import CardAgendamentos from "../../Components/CardAgendamentos";
-import horarios from "../../Components/Objects/horarios.json";
-import medicos from "../../Components/Objects/medicos.json";
 import CardVisualizarDados from "../../Components/CardConsulta";
-import agendamentos from "../../Components/Objects/agendamentoFeitos.json";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Agendamentos = () => {
   const setData = (value: any) => {
@@ -14,6 +13,28 @@ const Agendamentos = () => {
 
     // 2023-02-21
   };
+  const [medicos, setMedicos] = useState([]);
+  const [horarios, setHorarios] = useState([]);
+  const [agendamentos, setAgendamentos] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/medicos").then((response) => {
+      const medicosChegando = response.data;
+      setMedicos(medicosChegando);
+    });
+
+    axios.get("http://localhost:5000/horarios").then((response) => {
+      const horariosChegando = response.data;
+      setHorarios(horariosChegando);
+    
+    });
+
+    axios.get("http://localhost:5000/agendamentos").then((response) => {
+      const agendamentosChegando = response.data;
+      setAgendamentos(agendamentosChegando);
+    
+    });
+  }, []);
 
   return (
     <>
